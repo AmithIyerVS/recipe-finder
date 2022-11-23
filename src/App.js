@@ -6,6 +6,8 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
+import logo from './images/hamburger.svg';
+import search from './images/search-icon.svg';
 
 
 import { Header,
@@ -98,19 +100,19 @@ function App() {
     <Container>
       <Header>
         <AppNameComponent>
-          <AppIcon src="/hamburger.svg"/>
+          <AppIcon src={logo}/>
             Recipe Finder
         </AppNameComponent>
 
         <SearchComponent>
-          <SearchIcon src="/search-icon.svg"/>
+          <SearchIcon src={search}/>
           <SearchInput type="search" placeholder="Search Recipe" onChange={onTextChange}/>
         </SearchComponent>
       </Header>
 
       <RecipeListContainer>
         {recipeList.length ? recipeList.map((recipeObj)=><RecipeComponent recipeObj={recipeObj.recipe}/>):
-        <Placeholder src="/hamburger.svg"/>}
+        <Placeholder src={logo}/>}
         {/* <RecipeComponent /> */}
       </RecipeListContainer>
     </Container>
